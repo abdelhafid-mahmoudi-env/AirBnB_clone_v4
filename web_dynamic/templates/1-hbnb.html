@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="../static/scripts/1-hbnb.js?{{ cache_id }}"></script>
+</head>
+<body>
+    <h2>Select some Amenities to be comfortable!</h2>
+    <div>
+        <h4>Amenities</h4>
+        <ul>
+        {% for amenity in amenities %}
+            <li>
+                <input type="checkbox" data-id="{{ amenity.id }}" data-name="{{ amenity.name }}" style="margin-left: 10px;">
+                {{ amenity.name }}
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
+

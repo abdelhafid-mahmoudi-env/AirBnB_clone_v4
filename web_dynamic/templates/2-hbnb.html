@@ -1,0 +1,30 @@
+<!-- web_dynamic/templates/2-hbnb.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2-HBNB</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="../static/scripts/2-hbnb.js?{{ cache_id }}"></script>
+</head>
+<body>
+    <header>
+        <!-- Nouvel élément pour le statut de l'API -->
+        <div id="api_status" style="width: 40px; height: 40px; border-radius: 50%; background-color: #cccccc; position: absolute; right: 30px; top: 50%; transform: translateY(-50%);"></div>
+    </header>
+    <!-- Contenu supplémentaire et interaction des utilisateurs -->
+    <h2>Select some Amenities to be comfortable!</h2>
+    <div>
+        <h4>Amenities</h4>
+        <ul>
+        {% for amenity in amenities %}
+            <li>
+                <input type="checkbox" data-id="{{ amenity.id }}" data-name="{{ amenity.name }}" style="margin-left: 10px;">
+                {{ amenity.name }}
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
